@@ -5,6 +5,13 @@
 	<title>video简单属性确认</title>
 </head>
 <body>
-	
+	<video muted src="./video.mp4" controls="controls" autoplay="autoplay" width="500" height="250" loop preload></video>
+	<video id="videoDom" poster="http://img0.ph.126.net/I10JqUUJDmlEtE_XYl4hOg==/6608842237655242020.jpg"  muted src="./video.mp4" controls="controls" width="500" height="250" loop preload></video>
+	<script type="text/javascript">
+		var myVideo = document.getElementById('videoDom');
+		myVideo.addEventListener('loadedmetadata', () => {
+			console.log(myVideo.duration);
+		});
+	</script>
 </body>
 </html>

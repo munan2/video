@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>video事件</title>
+</head>
+<body>
+	<video src="./video.mp4" id="my-video" controls></video>
+	<script type="text/javascript">
+		var myVideo = document.getElementById('my-video');
+		myVideo.addEventListener('canplaythrough', () => {
+			console.log('canplaythrough');
+		});
+		myVideo.addEventListener('canplay', () => {
+			console.log('canplay');
+		});
+		myVideo.addEventListener('progress', () => {
+			console.log('progress');
+		});
+		myVideo.addEventListener('loadeddata', () => {
+			console.log('loadeddata');
+		});
+		myVideo.addEventListener('loadedmetadata', () => {
+			console.log('loadedmetadata');
+		});
+		myVideo.addEventListener('durationchange', () => {
+			console.log('durationchange');
+		});
+		myVideo.addEventListener('loadstart', () => {
+			console.log('loadstart');
+		});
+		myVideo.addEventListener('timeupdate', () => {
+			var currentTime = myVideo.currentTime;
+			if (currentTime < 10) {
+				myVideo.play();
+			} else {
+				myVideo.pause();
+			}
+		})
+	</script>
+</body>
+</html>
